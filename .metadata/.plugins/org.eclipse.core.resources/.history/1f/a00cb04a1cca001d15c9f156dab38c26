@@ -1,0 +1,39 @@
+package edu.pnu.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class MemberDAO {
+	public Connection con;
+	public PreparedStatement psmt;
+	public Statement stmt;
+	public ResultSet rs;
+	
+	public MemberDAO() throws ClassNotFoundException, SQLException {
+		try {
+			Class.forName("org.h2.Driver");
+			con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/springboot");
+		}catch (Exception e) {
+			System.out.println("db오류");
+			e.printStackTrace();
+		}
+	}
+	
+	public MemberDAO seletMember(MemberDAO member) throws SQLException {
+		try {
+			psmt = con.prepareStatement("select * from member");
+			rs = psmt.executeQuery();
+		}catch (Exception e) {
+			rs.close();
+			psmt.close();
+			e.printStackTrace();
+		}
+		return seletMember(member);
+	}
+	
+	
+}

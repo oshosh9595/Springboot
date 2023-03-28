@@ -1,0 +1,73 @@
+package edu.pnu.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import edu.pnu.domain.MemberVO;
+
+public class MemberDAO {
+	static Connection con;
+	static PreparedStatement psmt;
+	static Statement stmt;
+	static ResultSet rs;
+	
+	//private static List<MemberVO> list;
+	
+	//MemberDAO memberDAO = new MemberDAO();
+	
+	public MemberDAO() {
+		try {
+			Class.forName("org.h2.Driver");
+			con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/springboot", "sa", "");
+		}catch (Exception e) {
+			System.out.println("db오류");
+			e.printStackTrace();
+		}
+	}	
+	
+	public List<MemberVO> getMembers(){
+		List<MemberVO> list = new ArrayList<>();
+		
+		try {
+			psmt = con.prepareStatement("select * from member");
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				MemberVO memberVO = new MemberVO();
+				memberVO.setId(rs.getInt("id"));
+				memberVO.setPass(rs.getString("pass"));
+				memberVO.setName(rs.getString("name"));
+				memberVO.setRegidate(rs.getDate("regidate"));
+				
+				list.add(memberVO);
+			}
+			
+		}catch (SQLException e) {
+			try {
+				rs.close();
+				psmt.close();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public MemberVO addMember(Integer id){
+		try {
+			psmt = con.prepareStatement("insert into member values(6, '야구의 손', '길투벗', 10000)");
+		}catch(Exception e) {
+			
+		}
+		return null;
+	}
+}

@@ -1,0 +1,19 @@
+package edu.pnu.service;
+
+import java.util.List;
+
+import edu.pnu.dao.MemberDAO;
+import edu.pnu.domain.MemberVO;
+
+public class MemberService {
+	
+	private MemberDAO memberDAO = new MemberDAO();
+	
+	public List<MemberVO> getMembers(){
+		return memberDAO.getMembers();
+	}
+	
+	public MemberVO getMember() {
+		return memberDAO.getMember(null);
+	}
+}

@@ -1,0 +1,17 @@
+package edu.pnu.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import edu.pnu.dao.MemberDAO;
+
+public class MemberService {
+	
+	MemberService memberService = new MemberService();
+	
+	public MemberDAO seletMember(MemberDAO member) throws SQLException{
+		return MemberDAO.seletMember(member);
+	}
+	
+}

@@ -1,0 +1,53 @@
+package edu.pnu.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import edu.pnu.service.MemberService;
+
+public class MemberDAO {
+	static Connection con;
+	static PreparedStatement psmt;
+	static Statement stmt;
+	static ResultSet rs;
+	
+	//MemberDAO memberDAO = new MemberDAO();
+	
+	public MemberDAO() {
+		try {
+			Class.forName("org.h2.Driver");
+			con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/springboot", "sa", "");
+		}catch (Exception e) {
+			System.out.println("db오류");
+			e.printStackTrace();
+		}
+	}
+	
+	public static MemberDAO seletMember(MemberDAO member) throws SQLException{
+
+		try {
+			psmt = con.prepareStatement("select * from member");
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				String id = rs.getInt("id");
+				String pass = rs.getString("pass");
+				String pass = rs.getString("pass");
+				String pass = rs.getString("pass");
+				System.out.println("이름 : " + uname + ", 이메일 : " + email);
+			}
+			
+		}catch (SQLException e) {
+			rs.close();
+			psmt.close();
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
+}

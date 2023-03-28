@@ -1,0 +1,14 @@
+package edu.pnu.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+import edu.pnu.dao.MemberDAO;
+
+public class MemberController {
+	
+	GetMapping("member")
+	public MemberDAO seletMember() {
+		return MemberService.seletMember();
+	}
+	
+}
