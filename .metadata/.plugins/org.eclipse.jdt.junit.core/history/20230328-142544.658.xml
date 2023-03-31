@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="Mission2ApplicationTests" project="Mission2" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="edu.pnu.Mission2ApplicationTests" time="0.266" displayname="Mission2ApplicationTests" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.Mission2ApplicationTests]">
-    <testcase name="contextLoads" classname="edu.pnu.Mission2ApplicationTests" time="0.266" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:edu.pnu.Mission2ApplicationTests]/[method:contextLoads()]"/>
-  </testsuite>
-</testrun>
