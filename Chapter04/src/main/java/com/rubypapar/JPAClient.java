@@ -8,6 +8,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import com.rubypapar.domain.Board;
+import com.rubypapar.domain.Board1;
 
 public class JPAClient {
 
@@ -22,17 +23,28 @@ public class JPAClient {
 		try {
 			tx.begin();
 			
-			Board board = new Board();
-			board.setTitle("JPA제목");
-			board.setWriter("관리자");
-			board.setContent("JPA 글 등록 잘 되네요.");
-			board.setCreateDate(new Date());
-			board.setCnt(0L);
+			for(int i = 0; i<=10; i++) {
+				Board board = Board.builder()
+								.title("title" + i)
+								.content("content" + i)
+								.writer("writer" + i)
+								//.creatDate("creatDate" + i)
+								.build();
+				em.persist(board);
+								
+			}
+			tx.commit();
 			
-			//글등록
-			em.persist(board);
-			
-			// Transaction commit
+			tx.begin();
+			for(int i = 1; i <= 10; i++) {
+				Board1 board1 = Board1.builder()
+								.title("title" + i)
+								.content("content" + i)
+								.writer("writer" + i)
+								.creatDate(new Date())
+								.build();
+				em.persist(board1);
+			}
 			tx.commit();
 		}catch(Exception e) {
 			e.printStackTrace();
