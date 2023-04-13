@@ -2,5 +2,6 @@
 <typeInfoHistroy>
     <typeInfo handle="=Mission3/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;edu.pnu.dao{MemberDao.java[MemberDao" modifiers="513" timestamp="1680053257015"/>
     <typeInfo handle="=Chapter06/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;edu.pnu{Chapter06ApplicationTests.java[Chapter06ApplicationTests" modifiers="0" timestamp="1680828643212"/>
+    <typeInfo handle="=Chapter06JSP/C:\/Users\/SW\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/2.7.10\/spring-data-commons-2.7.10.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-commons=/=/maven.version=/2.7.10=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.repository.core(CrudMethods.class[CrudMethods" modifiers="1537" timestamp="1681173149368"/>
     <typeInfo handle="=Chapter05/C:\/Users\/SW\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/3.0.4\/spring-data-commons-3.0.4.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-commons=/=/maven.version=/3.0.4=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.repository(CrudRepository.class[CrudRepository" modifiers="1537" timestamp="1680740897111"/>
 </typeInfoHistroy>
