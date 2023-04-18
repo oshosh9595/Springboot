@@ -34,4 +34,6 @@ public class Board {
 	@Column(insertable = false, updatable = false, columnDefinition = "number default 0")
 	private Long cnt;
 	
+	
+	
 }
